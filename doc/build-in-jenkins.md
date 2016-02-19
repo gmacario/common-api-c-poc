@@ -65,38 +65,36 @@ Excerpt from build console:
 ```
 Started by user anonymous
 [EnvInject] - Loading node environment variables.
-Building on master in workspace /var/jenkins_home/jobs/GENIVI/jobs/common-api-c-TEST/workspace
- > git rev-parse --is-inside-work-tree # timeout=10
+Building in workspace /var/jenkins_home/workspace/common-api-c
 ...
 Build Docker image from doc/Dockerfile ...
-$ docker build --file /var/jenkins_home/jobs/GENIVI/jobs/common-api-c-TEST/workspace/doc/Dockerfile /var/jenkins_home/jobs/GENIVI/jobs/common-api-c-TEST/workspace/doc
-Sending build context to Docker daemon  16.9 kB
-Sending build context to Docker daemon  16.9 kB
+$ docker build --file /var/jenkins_home/workspace/common-api-c/doc/Dockerfile /var/jenkins_home/workspace/common-api-c/doc
+Sending build context to Docker daemon 18.43 kB
 
 Step 1 : FROM ubuntu:16.04
- ---> 6ecedaa5a2cf
+ ---> 11f63f15630c
 Step 2 : MAINTAINER Gianpaolo Macario <gianpaolo_macario@mentor.com>
  ---> Using cache
- ---> a6f84eb958e7
+ ---> 91dcecfa92c7
 Step 3 : RUN apt-get update && apt-get -y dist-upgrade
  ---> Using cache
- ---> 60ac09353e47
+ ---> bae022c700db
 Step 4 : RUN apt-get -y install autoconf build-essential file git libtool make sudo
  ---> Using cache
- ---> e4801a375dee
+ ---> caa90d416c8a
 Step 5 : RUN apt-get -y install libsystemd-dev pkg-config
  ---> Using cache
- ---> 60cda93cd807
+ ---> b12bab8f0c8d
 Step 6 : RUN id build 2>/dev/null || useradd -m build
  ---> Using cache
- ---> 280b7015851c
+ ---> de67c0f76511
 Step 7 : RUN echo "build ALL=(ALL) NOPASSWD: ALL" | tee -a /etc/sudoers
  ---> Using cache
- ---> 7695c3bfd609
-Successfully built 7695c3bfd609
-Docker container 717f6c646837da18d03a467622479721bcee2d0b29fe3c3eb24bff021f3cfe6c started to host the build
-...
-[workspace] $ docker exec --tty --user 0:0 717f6c646837da18d03a467622479721bcee2d0b29fe3c3eb24bff021f3cfe6c env affinity:container==e1d192d7db587826ac8fe8aa16904668acfa610aca385d3941c67924ea61154a 'BASH_FUNC_copy_reference_file%%=() {  f="${1%/}";
+ ---> 9c7b1bd05298
+Successfully built 9c7b1bd05298
+Docker container b50a1d08d1a85e667549d6ec2ef6205cf0af0d9c625ccf268918b7bab54b7566 started to host the build
+$ docker exec --tty b50a1d08d1a85e667549d6ec2ef6205cf0af0d9c625ccf268918b7bab54b7566 env
+[common-api-c] $ docker exec --tty --user 0:0 b50a1d08d1a85e667549d6ec2ef6205cf0af0d9c625ccf268918b7bab54b7566 env 'BASH_FUNC_copy_reference_file%%=() {  f="${1%/}";
  b="${f%.override}";
  echo "$f" >> "$COPY_REFERENCE_FILE_LOG";
  rel="${b:23}";
@@ -108,7 +106,7 @@ Docker container 717f6c646837da18d03a467622479721bcee2d0b29fe3c3eb24bff021f3cfe6
  cp -r "${f}" "/var/jenkins_home/${rel}";
  [[ ${rel} == plugins/*.jpi ]] && touch "/var/jenkins_home/${rel}.pinned";
  fi
-}' BUILD_CAUSE=MANUALTRIGGER BUILD_CAUSE_MANUALTRIGGER=true BUILD_DISPLAY_NAME=#15 BUILD_ID=15 BUILD_NUMBER=15 BUILD_TAG=jenkins-GENIVI-common-api-c-TEST-15 CA_CERTIFICATES_JAVA_VERSION=20140324 CLASSPATH= COPY_REFERENCE_FILE_LOG=/var/jenkins_home/copy_reference_file.log EXECUTOR_NUMBER=0 GIT_BRANCH=origin/feat-build-in-docker GIT_COMMIT=bc7e97abd68bffd59890bbd75a2e54c203dde1f3 GIT_PREVIOUS_COMMIT=bc7e97abd68bffd59890bbd75a2e54c203dde1f3 GIT_PREVIOUS_SUCCESSFUL_COMMIT=bc7e97abd68bffd59890bbd75a2e54c203dde1f3 GIT_URL=https://github.com/gmacario/common-api-c-poc HOME=/root HOSTNAME=23165c7ab151 HUDSON_HOME=/var/jenkins_home HUDSON_SERVER_COOKIE=53d719acc1b28b93 JAVA_DEBIAN_VERSION=8u66-b17-1~bpo8+1 JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 JAVA_VERSION=8u66 JENKINS_HOME=/var/jenkins_home JENKINS_SERVER_COOKIE=53d719acc1b28b93 JENKINS_SHA=6a0213256670a00610a3e09203850a0fcf1a688e JENKINS_SLAVE_AGENT_PORT=50000 JENKINS_UC=https://updates.jenkins-ci.org JENKINS_VERSION=1.642.1 JOB_NAME=GENIVI/common-api-c-TEST LANG=C.UTF-8 NODE_LABELS=master NODE_NAME=master PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin PWD=/ ROOT_BUILD_CAUSE=MANUALTRIGGER ROOT_BUILD_CAUSE_MANUALTRIGGER=true SHLVL=2 TERM=xterm TINI_SHA=066ad710107dc7ee05d3aa6e4974f01dc98f3888 WORKSPACE=/var/jenkins_home/jobs/GENIVI/jobs/common-api-c-TEST/workspace /bin/sh -xe /tmp/hudson3552234810885969459.sh
+}' BUILD_CAUSE=MANUALTRIGGER BUILD_CAUSE_MANUALTRIGGER=true BUILD_DISPLAY_NAME=#2 BUILD_ID=2 BUILD_NUMBER=2 BUILD_TAG=jenkins-common-api-c-2 CA_CERTIFICATES_JAVA_VERSION=20140324 CLASSPATH= COPY_REFERENCE_FILE_LOG=/var/jenkins_home/copy_reference_file.log EXECUTOR_NUMBER=0 GIT_BRANCH=origin/feat-build-in-docker GIT_COMMIT=c05ad6692ff31467da4dfb8c28ff5454f98b9d9f GIT_PREVIOUS_COMMIT=c05ad6692ff31467da4dfb8c28ff5454f98b9d9f GIT_PREVIOUS_SUCCESSFUL_COMMIT=c05ad6692ff31467da4dfb8c28ff5454f98b9d9f GIT_URL=https://github.com/gmacario/common-api-c-poc HOME=/root HOSTNAME=f809e1210c90 HUDSON_HOME=/var/jenkins_home HUDSON_SERVER_COOKIE=16c08e0031ecb35c JAVA_DEBIAN_VERSION=8u72-b15-1~bpo8+1 JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 JAVA_VERSION=8u72 JENKINS_HOME=/var/jenkins_home JENKINS_SERVER_COOKIE=16c08e0031ecb35c JENKINS_SHA=6a0213256670a00610a3e09203850a0fcf1a688e JENKINS_SLAVE_AGENT_PORT=50000 JENKINS_UC=https://updates.jenkins-ci.org JENKINS_VERSION=1.642.1 JOB_NAME=common-api-c LANG=C.UTF-8 NODE_LABELS=master NODE_NAME=master PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin PWD=/ ROOT_BUILD_CAUSE=MANUALTRIGGER ROOT_BUILD_CAUSE_MANUALTRIGGER=true SHLVL=2 TERM=xterm TINI_SHA=066ad710107dc7ee05d3aa6e4974f01dc98f3888 WORKSPACE=/var/jenkins_home/workspace/common-api-c /bin/sh -xe /tmp/hudson5538845131742388246.sh
 + autoreconf -i
 libtoolize: Consider adding 'AC_CONFIG_MACRO_DIRS([m4])' to configure.ac,
 libtoolize: and rerunning libtoolize and aclocal.
@@ -119,10 +117,10 @@ checking for a BSD-compatible install... /usr/bin/install -c
 config.status: executing libtool commands
 + make
 make  all-am
-make[1]: Entering directory '/var/jenkins_home/jobs/GENIVI/jobs/common-api-c-TEST/workspace'
-make[1]: Leaving directory '/var/jenkins_home/jobs/GENIVI/jobs/common-api-c-TEST/workspace'
+make[1]: Entering directory '/var/jenkins_home/workspace/common-api-c'
+make[1]: Leaving directory '/var/jenkins_home/workspace/common-api-c'
 + sudo make install
-make[1]: Entering directory '/var/jenkins_home/jobs/GENIVI/jobs/common-api-c-TEST/workspace'
+make[1]: Entering directory '/var/jenkins_home/workspace/common-api-c'
  /bin/mkdir -p '/usr/local/lib'
  /bin/bash ./libtool   --mode=install /usr/bin/install -c   libcapic.la '/usr/local/lib'
 libtool: install: /usr/bin/install -c .libs/libcapic.so.0.0.0 /usr/local/lib/libcapic.so.0.0.0
@@ -152,7 +150,7 @@ more information, such as the ld(1) and ld.so(8) manual pages.
  /usr/bin/install -c -m 644 capic.pc '/usr/local/lib/pkgconfig'
  /bin/mkdir -p '/usr/local/include/capic'
  /usr/bin/install -c -m 644 src/capic/backend.h src/capic/log.h src/capic/dbus-private.h '/usr/local/include/capic'
-make[1]: Leaving directory '/var/jenkins_home/jobs/GENIVI/jobs/common-api-c-TEST/workspace'
+make[1]: Leaving directory '/var/jenkins_home/workspace/common-api-c'
 Stopping Docker container after build completion
 Notifying upstream projects of job completion
 Finished: SUCCESS
