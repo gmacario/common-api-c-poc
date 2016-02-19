@@ -1,4 +1,4 @@
-# Building common-api/c-poc in Jenkins
+# Building Common API C in Jenkins
 
 ## Prerequisites
 
@@ -9,11 +9,11 @@
 
 ## Step-by-step instructions
 
-### Create project `common-api-c-poc`
+### Create project `common-api-c`
 
 Browse `${DOCKER_URL}`, then click **New Item**
 
-* Name: `common-api-c-poc`
+* Name: `common-api-c`
 * Type: **Freestyle project**
 
 then click **OK**. Inside the project configuration page, add the following information:
@@ -64,9 +64,9 @@ sudo make install
 
 then click **Save**.
 
-### Build project `common-api-c-poc`
+### Build project `common-api-c`
 
-Browse `${DOCKER_URL}/jobs/common-api-c-poc`, then click **Build Now**
+Browse `${DOCKER_URL}/jobs/common-api-c`, then click **Build Now**
 
 Result: SUCCESS
 
@@ -75,7 +75,7 @@ Excerpt from build console:
 ```
 Started by user anonymous
 [EnvInject] - Loading node environment variables.
-Building on master in workspace /var/jenkins_home/jobs/common-api-c-poc/workspace
+Building on master in workspace /var/jenkins_home/jobs/common-api-c/workspace
  > git rev-parse --is-inside-work-tree # timeout=10
 Fetching changes from the remote Git repository
  > git config remote.origin.url git://git.projects.genivi.org/common-api/c-poc.git # timeout=10
@@ -102,10 +102,10 @@ checking for a BSD-compatible install... /usr/bin/install -c
 config.status: executing libtool commands
 + make
 make  all-am
-make[1]: Entering directory '/var/jenkins_home/jobs/common-api-c-poc/workspace'
-make[1]: Leaving directory '/var/jenkins_home/jobs/common-api-c-poc/workspace'
+make[1]: Entering directory '/var/jenkins_home/jobs/common-api-c/workspace'
+make[1]: Leaving directory '/var/jenkins_home/jobs/common-api-c/workspace'
 + sudo make install
-make[1]: Entering directory '/var/jenkins_home/jobs/common-api-c-poc/workspace'
+make[1]: Entering directory '/var/jenkins_home/jobs/common-api-c/workspace'
  /bin/mkdir -p '/usr/local/lib'
  /bin/bash ./libtool   --mode=install /usr/bin/install -c   libcapic.la '/usr/local/lib'
 libtool: install: /usr/bin/install -c .libs/libcapic.so.0.0.0 /usr/local/lib/libcapic.so.0.0.0
@@ -135,7 +135,7 @@ more information, such as the ld(1) and ld.so(8) manual pages.
  /usr/bin/install -c -m 644 capic.pc '/usr/local/lib/pkgconfig'
  /bin/mkdir -p '/usr/local/include/capic'
  /usr/bin/install -c -m 644 src/capic/backend.h src/capic/log.h src/capic/dbus-private.h '/usr/local/include/capic'
-make[1]: Leaving directory '/var/jenkins_home/jobs/common-api-c-poc/workspace'
+make[1]: Leaving directory '/var/jenkins_home/jobs/common-api-c/workspace'
 Stopping Docker container after build completion
 Notifying upstream projects of job completion
 Finished: SUCCESS
