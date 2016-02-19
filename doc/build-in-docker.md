@@ -1,4 +1,4 @@
-# Building common-api/c-poc inside a Docker container
+# Building Common API C inside a Docker container
 
 ## Prerequisites
 
@@ -10,8 +10,8 @@
 ### Build the Docker image
 
 ```
-$ cd .../common-api-c-poc
-$ docker build -t capi-c-poc-devenv doc/
+$ cd .../c-poc
+$ docker build -t capic-devenv doc/
 ```
 
 ### Build common-api/c-poc inside a container
@@ -19,7 +19,7 @@ $ docker build -t capi-c-poc-devenv doc/
 Run the container to prepare a proper development environment
 
 ```
-$ docker run -ti -u build -w /home/build capi-c-poc-devenv
+$ docker run -ti -u build -w /home/build capic-devenv
 ```
 
 Logged as _build@container_, execute the commands as explained in toplevel `README.adoc`
