@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-* A machine with [Docker]() version 1.10 or later installed
+* A machine with [Docker](https://www.docker.com/) version 1.10 or later installed
   - Tested on Ubuntu 16.04.4 LTS 64-bit
 
 ## Step-by-step instructions
